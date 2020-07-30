@@ -4,18 +4,22 @@ function keyHandler(num){
         document.getElementById('pinOutput').value = val;
     }
     let output = getOutput();
+    //this function for col number button
     outputGenerator(num,output);
+    //backspace delete single letter form input filled
     if(num == 'backspace'){
         if(output != NaN){
             output = output.substr(0,output.length - 1);
-            PrintOutput(output);
+            PrintResult(output);
         }
     }
+    // clear from input filled 
     if(num == 'clear'){
         if(output != NaN){
-            PrintOutput("");
+            PrintResult("");
         }
     }
+    //check pin 
     if(num == 'submit'){
         if(val == output){
             document.getElementById('pinMatch').style.display = "block";
@@ -26,24 +30,20 @@ function keyHandler(num){
         }
     }
 }
-
-let pinNotMatch = document.getElementById('pinNotMatch');
-pinNotMatch.style.display = "none";
-let pinMatch = document.getElementById('pinMatch');
-pinMatch.style.display = 'none';
-
+//this function takes output value from input field
 function getOutput(){
     return document.getElementById('output').value;
 }
-function PrintOutput(num){
+//this give us final output
+function PrintResult(num){
     document.getElementById('output').value = num;
 }
-
+//this function take number value form number button
 function outputGenerator(num,output){
     if(num != 'random' && num !='submit'){
         if(output != NaN){
             output = output + num;
-            PrintOutput(output);
+            PrintResult(output);
         }
     }
 }
