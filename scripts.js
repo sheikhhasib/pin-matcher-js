@@ -1,3 +1,4 @@
+let count = 0;
 function keyHandler(num){
     if(num == "random"){
         val = Math.floor(1000 + Math.random() * 9000);
@@ -20,14 +21,21 @@ function keyHandler(num){
         }
     }
     //check pin 
+    
     if(num == 'submit'){
-        if(val == output){
-            document.getElementById('pinMatch').style.display = "block";
-            document.getElementById('pinNotMatch').style.display = "none";
+        count++;
+        if(count<4){
+            if(val == output){
+                document.getElementById('pinMatch').style.display = "block";
+                document.getElementById('pinNotMatch').style.display = "none";
+            }else{
+                document.getElementById('pinNotMatch').style.display = "block";
+                document.getElementById('pinMatch').style.display = "none";
+            }
         }else{
-            document.getElementById('pinNotMatch').style.display = "block";
-            document.getElementById('pinMatch').style.display = "none";
+            document.getElementById('try').style.display = "block";
         }
+        
     }
 }
 //this function takes output value from input field
