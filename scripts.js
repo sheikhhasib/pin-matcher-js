@@ -23,12 +23,13 @@ function keyHandler(num){
     //check pin 
     
     if(num == 'submit'){
-        count++;
+        
        
         if(val == output){
             document.getElementById('pinMatch').style.display = "block";
             document.getElementById('pinNotMatch').style.display = "none";
         }else{
+            count++;
             if(count<4){
                 document.getElementById('pinNotMatch').style.display = "block";
                 document.getElementById('pinMatch').style.display = "none";
