@@ -24,18 +24,18 @@ function keyHandler(num){
     
     if(num == 'submit'){
         count++;
-        if(count<4){
-            if(val == output){
-                document.getElementById('pinMatch').style.display = "block";
-                document.getElementById('pinNotMatch').style.display = "none";
-            }else{
+       
+        if(val == output){
+            document.getElementById('pinMatch').style.display = "block";
+            document.getElementById('pinNotMatch').style.display = "none";
+        }else{
+            if(count<4){
                 document.getElementById('pinNotMatch').style.display = "block";
                 document.getElementById('pinMatch').style.display = "none";
+            }else{
+                document.getElementById('try').style.display = "block";
             }
-        }else{
-            document.getElementById('try').style.display = "block";
         }
-        
     }
 }
 //this function takes output value from input field
