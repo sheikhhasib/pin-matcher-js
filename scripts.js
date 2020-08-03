@@ -48,11 +48,11 @@ function PrintResult(num){
     document.getElementById('output').value = num;
 }
 //this function take number value form number button
-function outputGenerator(num,output){
-    if(num != 'random' && num !='submit'){
-        if(output != NaN){
-            output = output + num;
-            PrintResult(output);
-        }
-    }
-}
+// function outputGenerator(num,output){
+//     if(num != 'random' && num !='submit'){
+//         if(output != NaN){
+//             output = output + num;
+//             PrintResult(output);
+//         }
+//     }
+// }
